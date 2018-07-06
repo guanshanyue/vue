@@ -4,36 +4,89 @@
     <meta charset="UTF-8">
     <title>动态组件 Velocity</title>
     <script src="./vue.js"></script>
-    <script src="velocity.min.js"></script>
+    <!--<script src="velocity.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <style>
+        .with-mode-fade-enter-active, .with-mode-fade-leave-active {
+            transition: opacity .5s
+        }
+        .with-mode-fade-enter, .with-mode-fade-leave-active {
+            opacity: 0
+        }
+    </style>
 </head>
 <body>
     <div id="app">
+        <!--
         <transition
                 v-on:before-enter="beforeEnter"
                 v-on:enter="enter"
                 v-on:leave="leave"
                 v-bind:css="false"
         >
-            <div v-if="show">Hello,world</div>
+            <img v-if="show" src="./img/gouwuche.png">
         </transition>
-        <button @click="show = !show">提交</button>
+        <button @click="show = !show">
+            Save
+        </button>
+        <transition>
+            <button v-bind:key="isEditing" @click="isEditing = !isEditing">
+                {{ isEditing ? 'Save' : 'Edit' }}
+            </button>
+        </transition>
+        <transition name="fade" mode="in-out">
+            <button v-bind:key="docState" @click="HandleClick">
+                {{ buttonMessage }}
+            </button>
+        </transition>
+        -->
+        <transition name="with-mode-fade" mode="out-in">
+            <button v-if="on" key="on" @click="on = false">
+                on
+            </button>
+            <button v-else="" key="off" @click="on = true">
+                off
+            </button>
+        </transition>
     </div>
 <script>
     var vm = new Vue({
         el: "#app",
         data: {
-            show: true
+            show: false,
+            isEditing:false,
+            docState:"saved",
+            on:true
+        },
+        computed:{
+            buttonMessage: function(docState){
+                switch (this.docState) {
+                    case 'saved': return 'Edit'
+                    case 'edited': return 'Save'
+                    case 'editing': return 'Cancel'
+                }
+            }
         },
         methods:{
+            HandleClick: function() {
+                if(this.docState === 'saved')
+                    this.docState='edited'
+                else if(this.docState === 'edited')
+                    this.docState='editing'
+                else if(this.docState === 'editing')
+                    this.docState='saved'
+                else
+                    console.log('bye')
+            },
             beforeEnter: function (el) {
                 el.style.opacity = 0
                 el.style.transformOrigin = 'left'
-                 },
-            enter: function (el,done) {
+            },
+            enter: function (el, done) {
                 Velocity(el, { opacity: 1, fontSize: '1.4em' }, { duration: 300 })
                 Velocity(el, { fontSize: '1em' }, { complete: done })
             },
-            leave:function (el,done) {
+            leave: function (el, done) {
                 Velocity(el, { translateX: '15px', rotateZ: '50deg' }, { duration: 600 })
                 Velocity(el, { rotateZ: '100deg' }, { loop: 2 })
                 Velocity(el, {
