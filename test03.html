@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环列表</title>
+    <script src="./vue.js"></script>
+    <style>
+        .btn{
+            margin: 100px auto;
+            width: 200px;
+            line-height: 50px;
+            border: 1px solid #42b983;
+            border-radius: 5px;
+            color: #42b983;
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="btn" v-if="disabled" @click="handleClick">可点击</div>
+        <div class="btn" v-else >不可点击</div>
+        <Button v-if="disabled" @clickTest="handleClick">可点击</Button>
+        <Button v-else>不可点击</Button>
+    </div>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data () {
+            return {
+                disabled: true
+            }
+        },
+        methods: {
+            handleClick() {
+                alert('可点击')
+            }
+        },
+        components: {
+            Button,
+        },
+        mounted() {
+            setTimeout(() => {
+                this.disabled = false
+            }, 1000)
+        }
+    })
+</script>
+</body>
+</html>

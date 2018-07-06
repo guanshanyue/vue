@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件校验</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <item content="hello"></item>
+    </div>
+<script>
+    var Item = {
+        props: {
+            content: {
+                type: String,
+                // required: false,
+                // default: '开心'
+                validator: function (value) {
+                    return (value.length>=5)
+                }
+            }
+        },
+        computed:{
+            reversedMessage: function () {
+                if(this.content.length >= 5) {
+                    return  this.content
+                }
+                else {
+                    return ''
+                }
+            }
+        },
+        template: "<div>{{reversedMessage}}</div>"
+    }
+    var vm = new Vue({
+        el: "#app",
+        components: {
+            item: Item
+        },
+        data: {
+            activated: ''
+        }
+    })
+</script>
+</body>
+</html>

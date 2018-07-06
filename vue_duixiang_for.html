@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象循环</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-for="(item ,key,index) of userinfo">
+            {{item}} -- {{key}}  -- {{index}}
+        </div>
+        <div v-for="n in evenNumbers">
+            {{n}}
+        </div>
+        <div v-for="n in even(evenNumbers)">
+            {{n}}
+        </div>
+        <div>
+            <span v-for="n in 3">{{ n }} </span>
+        </div>
+
+        <ul>
+            <template v-for="item in list">
+                <li>{{ item.text }}</li>
+                <li class="divider" role="presentation">测试</li>
+            </template>
+        </ul>
+    </div>
+
+    <div id="todo-list-example">
+        <form v-on:submit.prevent="addNewTodo">
+            <label for="new-todo">Add a todo</label>
+            <input
+                    v-model="newTodoText"
+                    id="new-todo"
+                    placeholder="E.g. Feed the cat"
+            >
+            <button>Add</button>
+        </form>
+        <ul>
+            <li
+                    is="todo-item"
+                    v-for="(todo, index) in todos"
+                    v-bind:keys="todo.id"
+                    v-bind:titles="todo.title"
+                    v-on:remove="todos.splice(index, 1)"
+            ></li>
+        </ul>
+    </div>
+<script>
+/*    var TodoItem = {
+        props:['keys','titles'],
+        template: "<li @click='HandleClick'>{{titles}}</li>",
+        methods: {
+            HandleClick: function () {
+                this.$emit('remove')
+            }
+        }
+    }*/
+
+    var TodoItem = {
+        props: ['keys','titles'],
+        template:"<li @click='HandleDelete'>{{keys}} {{titles}}</li>",
+        methods: {
+            HandleDelete: function () {
+                this.$emit('remove',this.index)
+            }} }
+
+    var vm01 = new Vue({
+        el:"#todo-list-example",
+        components: {
+            'todo-item': TodoItem
+        },
+        data: {
+            todos:[
+                {id:1,title:"111"},
+                {id:2,title:"222"},
+                {id:3,title:"333"}
+            ],
+            newTodoText: '',
+            newTodoId: 4
+        },
+        methods: {
+            addNewTodo: function () {
+                this.todos.push({
+                    id: this.newTodoId++,
+                    title: this.newTodoText
+                }),
+                this.newTodoText=''
+            }
+        }
+    })
+
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            userinfo:{
+                name:"dawei",
+                sex: "男"
+            },
+            number: [1,2,3,4,5],
+            list: [
+                {id:"111",text:"haha1"},
+                {id:"222",text:"haha2"},
+                {id:"333",text:"haha3"}
+            ]
+        },
+        methods:{
+            even:function (evenNumbers) {
+                return this.number.filter(function (num) {
+                    return num % 2 == 0
+                })
+            }
+        },
+        computed:{
+            evenNumbers:function () {
+                return this.number.filter(function (num) {
+                    return num % 2 == 0
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>

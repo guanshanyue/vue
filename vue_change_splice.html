@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环列表</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <template v-for="(item,index) in list"
+                  >
+            <div>{{item.text}} --- {{index}}</div>
+            <span>{{item.text}}</span>
+        </template>
+    </div>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            list: [
+                {id:"111",text:"haha1"},
+                {id:"222",text:"haha2"},
+                {id:"333",text:"haha3"}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

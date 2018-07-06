@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-if="show" data-test="v-if">{{message}}</div>
+        <div v-else>Bye</div>
+        <div v-show="show" data-test="v-show">{{message}}</div>
+
+        <div v-if="apple === 'a'" >This is A</div>
+        <div v-else-if="apple === 'b'" >This is B</div>
+        <div v-else >This is Others</div>
+
+        <div v-if="show">
+            用户名： <input key="username" />
+        </div>
+        <div v-else>
+            邮箱名： <input key="password" />
+        </div>
+
+        <template v-if="loginType === 'username'">
+            <label>Username</label>
+            <input placeholder="Enter your username" key="username-input">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address" key="email-input">
+        </template>
+        <button @click="toggleLoginType">Toggle login type</button>
+    </div>
+
+    <div id="todo-list-example">
+        <form v-on:submit.prevent="addNewTodo">
+            <label for="new-todo">Add a todo</label>
+            <input
+                    v-model="newTodoText"
+                    id="new-todo"
+                    placeholder="E.g. Feed the cat"
+            >
+            <button>Add</button>
+        </form>
+        <ul>
+            <li
+                    is="todo-item"
+                    v-for="(todo, index) in todos"
+                    v-bind:keys="todo.id"
+                    v-bind:titles="todo.title"
+                    v-on:remove="todos.splice(index, 1)"
+            ></li>
+        </ul>
+    </div>
+
+    <script>
+        var TodoItem = {
+            props: ['keys','titles'],
+            template:"<li @click='HandleDelete'>{{keys}} {{titles}}</li>",
+            methods: {
+                HandleDelete: function () {
+                    this.$emit('remove',this.index)
+                }} }
+        var vm02 = new Vue({
+           el:"#todo-list-example",
+            components: {
+               'todo-item': TodoItem
+            },
+           data: {
+               newTodoText: '',
+               todos: [
+                   {id: 1, title: 'Vue-01'},
+                   {id: 2, title: 'Vue-02'}
+               ],
+               newTodoId: 3
+           },
+           methods: {
+               addNewTodo: function () {
+                   this.todos.push({
+                       id : this.newTodoId++,
+                       title : this.newTodoText
+                   });
+                   this.newTodoText=''
+               }
+           }
+       })
+       /* Vue.component('todo-item', {
+            template: '<li>{{ title }} ' +
+                '<button v-on:click="$emit(\'remove\')">Remove</button> ' +
+            '</li>',
+            props: ['title']
+        })
+        var vm01 = new Vue({
+            el: '#todo-list-example',
+            data: {
+                newTodoText: '',
+                todos: [
+                    {
+                        id: 1,
+                        title: 'Do the dishes',
+                    },
+                    {
+                        id: 2,
+                        title: 'Take out the trash',
+                    },
+                    {
+                        id: 3,
+                        title: 'Mow the lawn'
+                    }
+                ],
+                nextTodoId: 4
+            },
+            methods: {
+                addNewTodo: function () {
+                    this.todos.push({
+                        id: this.nextTodoId++,
+                        title: this.newTodoText
+                    })
+                    this.newTodoText = ''
+                }
+            }
+        })*/
+
+
+        var vm = new Vue({
+            el:"#app",
+            data: {
+                show: false,
+                message:"Hello,world",
+                apple: 'a',
+                loginType: 'username'
+            },
+            methods: {
+                toggleLoginType: function () {
+                    return this.loginType = this.loginType === 'username' ? 'email' : 'username'
+                }
+            }
+        })
+
+
+    </script>
+</body>
+</html>

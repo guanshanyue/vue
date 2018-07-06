@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环列表</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <blog-post title="My journey with Vue"></blog-post>
+    <blog-post v-bind:likes="42"></blog-post>
+    <blog-post v-bind:title="post.title + ' by ' + post.author.name"></blog-post>
+    <blog-post v-bind:author="{ name: 'Veronica', company: 'Veridian Dynamics' }"></blog-post>
+    <!-- 用一个变量进行动态赋值。-->
+    <blog-post v-bind:author="post.author"></blog-post>
+</div>
+<script>
+    Vue.component('blogPost',{
+        props: {
+            title: String,
+            likes: Number,
+            isPublished: Boolean,
+            commentIds: Array,
+            author: Object
+        },
+        template:"<div>{{title}} {{likes}} {{author}}</div>"
+    })
+
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            post: {
+                title:"haha",
+                author:{
+                    name:"123"
+                }
+            },
+            author:''
+        }
+    })
+</script>
+</body>
+</html>

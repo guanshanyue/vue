@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订阅消费</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <blog-post content="Hello,world 1" ></blog-post>
+        <blog-post content="Hello 2" ></blog-post>
+        <blog-post content="Hello 3" ></blog-post>
+        <!--<button @click="change"></button>-->
+    </div>
+<script>
+    Vue.prototype.bus = new Vue()
+    Vue.component('blog-post',{
+        props: ['content'],
+        data: function(){
+            return {
+                text: this.content
+            }
+        },
+        template: "<div @click='HandleClick'>{{this.text}}</div>",
+        methods:{
+            HandleClick: function () {
+                this.bus.$emit('change',this.text)
+            }
+        },
+        created: function () {
+            var _this= this
+            this.bus.$on('change',function (msg) {
+                _this.text=msg
+            }),
+                console.log('created');
+    },
+        beforeDestroy: function () {
+            console.log('beforeDestory');
+        },
+    })
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            activated: '',
+            Hello: '123'
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VUe</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-bind:class="classObj">hello,world</div>
+        <my-component :class="{active: isActive}"></my-component>
+    </div>
+    <script>
+        Vue.component('my-component',{
+            template: "<p class='foo bar'></p>"
+        })
+        var app = new Vue({
+            el:"#app",
+            component: "my-component",
+            data: {
+                classObj :{
+                    isActive: true,
+                    error: null
+                },
+                isActive: true
+            },
+            computed:{
+                classObject: function () {
+                    return {
+                        active: this.isActive && !this.error,
+                        'text-danger': this.error && this.error.type === 'fatal'
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插槽 及作用域插槽</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <child>
+            <div class="header" slot="header">header</div>
+            <div class="footer" slot="footer">footer</div>
+        </child>
+       <!--<todo-list v-bind:todos="todos">
+            <template slot-scope="{ todo }">
+                <span v-if="todo.isComplete">✓</span>
+                {{ todo.text }}
+            </template>
+        </todo-list>-->
+        <todo-list v-bind:todos="todos">
+            <template slot-scope="{ todo }">
+                <span v-if="todo.isComplete">✓</span>
+                {{ todo.text }}
+            </template>
+            <p slot="ppp">开始显示</p>
+        </todo-list>
+    </div>
+<script>
+    Vue.component('todo-list',{
+        props:['todos'],
+        /*data: function(){
+            return {
+                todos: [
+                    {name:'Jell2',text:"kk1",isComplete:true},
+                    {name:'Jell2',text:"kk2",isComplete:true},
+                    {name:'Jell3',text:"kk3",isComplete:false}
+                ]
+            }
+        },*/
+        template:`
+            <div>
+                <ul>
+                    <li
+                        v-for="todo in this.todos"
+                        v-bind:key="todo.id"
+                      >
+                        <slot v-bind:todo="todo">
+                        </slot>
+                        <slot name="ppp"></slot>
+                    </li>
+                </ul>
+            </div>
+            `
+    })
+    Vue.component('child',{
+        template:`
+            <div>
+                <slot name="header"></slot>
+                <p>Hello,world</p>
+                <slot name="footer"></slot>
+            </div>
+            `
+    })
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            todos: [
+                {name:'Jell2',text:"kk1",isComplete:true},
+                {name:'Jell2',text:"kk2",isComplete:true},
+                {name:'Jell3',text:"kk3",isComplete:false}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

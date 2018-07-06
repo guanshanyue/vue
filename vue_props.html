@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子间传值</title>
+    <script src="./vue.js"></script>
+    <style>
+        .demo-alert-box {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div :style="{ fontSize: postFontSize + 'em' }">
+        <blog-post
+                v-for="post in posts"
+                v-bind:key="post.id"
+                v-bind:post="post"
+                @change="postFontSize += $event"
+        ></blog-post>
+    </div>
+    <custom-input v-model="searchText"></custom-input>
+    <alert-box>
+        Something bad happened.
+    </alert-box>
+</div>
+
+<script>
+    Vue.component('alert-box', {
+        template: `
+    <div class="demo-alert-box" bgcolor="red">
+      <strong>Error!</strong>
+      <slot></slot>
+    </div>
+  `
+    })
+    Vue.component('custom-input', {
+        props: ['value'],
+        template: `
+    <input
+      v-bind:value="value"
+      v-on:input="$emit('input', $event.target.value)"
+    >
+  `
+    })
+
+    Vue.component('blog-post', {
+        props: ['post','post-font-size'],
+        data:function(){
+            return {
+                text: this.post.content
+            }
+        },
+        template: `
+    <div class="blog-post">
+      <h3>{{ post.title }}</h3>
+      <button @click="HandleClick">
+        Enlarge text
+      </button>
+      <div v-html="post.content"></div>
+    </div>
+  `,
+        methods:{
+            HandleClick:function () {
+                this.$emit('change',0.1)
+            }
+        }
+
+    })
+    var vm= new Vue({
+        el: '#app',
+        data: {
+            posts: [
+                { id: 1, title: 'My journey with Vue',content:'ddsdad'},
+                { id: 2, title: 'Blogging with Vue',content:'dadfajalkad2' },
+                { id: 3, title: 'Why Vue is so fun',content:'dajkaannladka3'}
+            ],
+            postFontSize: 1,
+            searchText: ''
+        },
+        methods:{
+            HandleMax: function () {
+                this.postFontSize++
+            }
+        }
+    })
+</script>
+</body>
+</html>

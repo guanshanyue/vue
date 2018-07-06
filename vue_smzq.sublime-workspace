@@ -1,0 +1,320 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"redis",
+				"redis4500"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 236.0,
+		"last_filter": "vue",
+		"selected_items":
+		[
+			[
+				"vue",
+				"Set Syntax: Vue Component"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"view",
+				"View: Toggle Menu"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 444.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Administrator/Desktop/临时文件/无效数据/IDataDAO.xml",
+		"/E/文档库/工作文档/商路/20160817/01/科室信息.sql",
+		"/C/Users/Administrator/AppData/Roaming/Foxmail7/Temp-16572-20180604163954/Attach/qsjr-D3.4.0-update-formal.sql",
+		"/C/Users/Administrator/Desktop/临时文件/无效数据/slowlog_20180604_092535.txt",
+		"/C/Users/Administrator/Desktop/临时文件/无效数据/口令红包5000-2.txt",
+		"/C/Users/Administrator/Desktop/临时文件/redis/INSERT INTO `weimaiows`.`wmys_yishengwzgl` (`LIUSH.sql",
+		"/C/Users/Administrator/AppData/Roaming/Foxmail7/Temp-5640-20180601145240/Attach/qsjr-D3.4.0-update-formal.sql",
+		"/C/Users/Administrator/Desktop/临时文件/新建文件夹/example01-2018-05-31-0.log",
+		"/C/Users/Administrator/Desktop/临时文件/无效数据/科室映射.sql",
+		"/C/Users/Administrator/AppData/Roaming/Foxmail7/Temp-6080-20180531182119/Attach/qsjr-D3.4.0-update-formal.sql",
+		"/C/Users/Administrator/AppData/Roaming/Foxmail7/Temp-14920-20180531165813/Attach/qsjr-D3.4.0-update-pre(1).sql",
+		"/C/Users/Administrator/AppData/Roaming/Foxmail7/Temp-15860-20180531153620/Attach/qsjr-D3.4.0-update-pre(1).sql",
+		"/E/软件包/Windows/文件搜索/Listary.Pro.5.00.2410.fix/key.txt",
+		"/E/文档库/mysql/线上数据库/日常操作/南藤/统计表的大小.sql",
+		"/C/Users/Administrator/Desktop/临时文件/无效数据/患者报道黑名单医生20180531.txt",
+		"/C/Users/Administrator/Desktop/临时文件/无效数据/slowlog_20180531_143825.txt",
+		"/C/Users/Administrator/Desktop/INSERT INTO `weimaiows`.sql",
+		"/C/Users/Administrator/Desktop/1.txt",
+		"/C/Users/Administrator/Desktop/临时文件/新建文件夹/db-script-master-cacccc9b4abf7c6a346866fe0f8f6a031ffd8908/2.7.0.0/2100-30-排班专家价格-uc_module_mapping+price2.sql",
+		"/C/Users/Administrator/Desktop/临时文件/无效数据/xxl-job.sql",
+		"/C/Users/Administrator/Desktop/临时文件/新建文件夹/db-script-master-cacccc9b4abf7c6a346866fe0f8f6a031ffd8908/2.7.0.0/2100-40-排班专家价格-uc_module_mapping+price改名price1.sql",
+		"/C/Users/Administrator/Desktop/临时文件/redis/redis常用命令.sql",
+		"/C/Users/Administrator/Desktop/临时文件/123/Sql_Script-master-4656694fc1a046ffa97f62ea8905c11459955d81/Tiger_balm(1.1.4)/新增索引.sql",
+		"/C/Users/Administrator/Desktop/临时文件/无效数据/00021-[Tiger_balm]oc_order_detail修改子订单索引类型(1).sql",
+		"/E/文档库/mysql/线上数据库/日常操作/白杨/标准科室信息整理.sql",
+		"/C/Users/Administrator/Desktop/临时文件/123/Sql_Script-master-4656694fc1a046ffa97f62ea8905c11459955d81/Tiger_balm(1.1.4)/00021-[Tiger_balm]oc_order_detail修改子订单索引类型.sql",
+		"/C/Users/Administrator/Desktop/临时文件/新建文件夹/db-script-master-cacccc9b4abf7c6a346866fe0f8f6a031ffd8908/2.7.0.0/2100-20-排班当日是否预约-ord_scheduling+order_flag.sql",
+		"/C/Users/Administrator/Desktop/临时文件/无效数据/00021-[Tiger_balm]oc_order_detail修改子订单索引类型.sql",
+		"/C/Users/Administrator/Desktop/临时文件/123/Sql_Script-master-4656694fc1a046ffa97f62ea8905c11459955d81/Tiger_balm(1.1.4)/00020-[Tiger_balm]新增订单中心所属表.sql",
+		"/C/Users/Administrator/Desktop/临时文件/123/Sql_Script-master-4656694fc1a046ffa97f62ea8905c11459955d81/Tiger_balm(1.1.4)/00002-[Tiger_balm]营销中心-消息提醒规则配置表创建 - .sql",
+		"/C/Users/Administrator/Desktop/临时文件/123/Sql_Script-master-4656694fc1a046ffa97f62ea8905c11459955d81/Tiger_balm(1.1.4)/333333-[Tiger_balm]营销中心(线上)-消息提醒规则配置表数据初始化 .sql",
+		"/C/Users/Administrator/Desktop/临时文件/123/Sql_Script-master-4656694fc1a046ffa97f62ea8905c11459955d81/Tiger_balm(1.1.4)/00001-[Tiger_balm]营销中心-广告配置表创建.sql",
+		"/C/Users/Administrator/Desktop/临时文件/123/Sql_Script-master-4656694fc1a046ffa97f62ea8905c11459955d81/Tiger_balm(1.1.4)/00003-[Tiger_balm]营销中心（预发）-消息提醒规则配置表数据初始化 .sql",
+		"/C/Users/Administrator/Desktop/临时文件/123/Sql_Script-master-4656694fc1a046ffa97f62ea8905c11459955d81/Tiger_balm(1.1.4)/00021-[Tiger_balm]oc_order_main新增字段.sql",
+		"/C/Users/Administrator/AppData/Roaming/Foxmail7/Temp-1308-20180530174140/Attach/333333-[Tiger_balm]营销中心(线上)-消息提醒规则配置表数据初始化 (1).sql",
+		"/E/文档库/个人文档/数据库修改/正式库/2018/05/30/INSERT INTO `weimaiows`.`ptgy_weixinwybs` (`LIUSHU_02.sql",
+		"/E/文档库/个人文档/数据库修改/正式库/2018/05/30/INSERT INTO ``.`` (`LIUSHUIHAO`, `WEIXINGZHBH`, `W.sql",
+		"/E/文档库/个人文档/数据库修改/正式库/2018/05/30/INSERT INTO `weimaiows`.`xtgy_zhigongxx` (`LIUSHUI.sql",
+		"/E/文档库/个人文档/数据库修改/正式库/2018/05/30/INSERT INTO `weimaiows`.`xtgy_keshixx` (`LIUSHUIHA.sql",
+		"/E/文档库/个人文档/数据库修改/正式库/2018/05/30/INSERT INTO `weimaiows`.`mzgy_menzhenpb` (`LIUSHUI.sql",
+		"/E/文档库/VUE/安装vue-temeplate.sql",
+		"/C/Users/Administrator/AppData/Roaming/Foxmail7/Temp-8252-20180529181743/Attach/qsjr-v3.1.0.0-update-formal.sql",
+		"/C/Users/Administrator/Desktop/临时文件/redis/INSERT INTO `mzgy_menzhenyy` (`LIUSHUIHAO`, `PINGT.sql",
+		"/C/Users/Administrator/Desktop/1 (2).txt",
+		"/C/Users/Administrator/AppData/Roaming/Foxmail7/Temp-2904-20180529102026/Attach/qsjr-v3.1.0.0-update-pre(1).sql",
+		"/C/Users/Administrator/Desktop/临时文件/无效数据/Sql_Script-master-6a9ad9f72b8328fed0c04bf2e6912e8b614bbe2e/4.10.0.0/4.10.0.0-新闻资讯统计相关表-日志库.sql",
+		"/C/Users/Administrator/Desktop/临时文件/无效数据/CE37EFD0-AB74-4652-BA45-0B83BF320F9A.txt",
+		"/C/Users/Administrator/Desktop/临时文件/无效数据/doctorblacklist.txt",
+		"/C/Users/Administrator/Desktop/临时文件/无效数据/INSERT INTO `weimaiows`.`wmys_yishengwzgl` (`LIUSH.sql",
+		"/C/Users/Administrator/Desktop/临时文件/redis/1.txt",
+		"/C/Users/Administrator/Desktop/INSERT INTO `weimaibao`.`tp_pay_order` (`pay_order.sql",
+		"/E/文档库/mysql/线上数据库/日常操作/南藤/金融数据同步脚本.sql",
+		"/C/Users/Administrator/Desktop/临时文件/无效数据/slowlog_20180528_095957.txt",
+		"/E/文档库/mysql/线上数据库/日常操作/南藤/慢日志汇总.sql",
+		"/C/Users/Administrator/AppData/Local/Temp/HZ$D.067.4716/HZ$D.067.4717/wechar/rongcloudrecord.txt",
+		"/E/文档库/个人文档/服务器/服务器配置清单.txt",
+		"/E/文档库/个人文档/服务器/服务部署文档.txt",
+		"/E/文档库/个人文档/服务器/服务器连接资料.txt",
+		"/C/Users/Administrator/Desktop/临时文件/文件目录/redis.conf",
+		"/E/软件包/shadowsocks/Shadowsocks-win10/gui-config.json",
+		"/C/Users/Administrator/Desktop/yygl_qunzuxx.json",
+		"/E/软件包/shadowsocks/Shadowsocks-win10/pac.txt",
+		"/C/Users/Administrator/Desktop/redis-sentinel配置.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/Sql_Script-master-6a9ad9f72b8328fed0c04bf2e6912e8b614bbe2e/4.10.0.0/4.10.0.0-新闻资讯统计相关表-日志库.sql",
+		"/C/Users/Administrator/Desktop/临时文件/文件目录/apollo/123.txt.txt",
+		"/C/Users/Administrator/Desktop/ptgl_quxianssqy.json",
+		"/C/Users/Administrator/AppData/Local/Temp/baiduyunguanjia/onlinedit/cache/61c472290a3d230fb718a3ab860e1326/webstorm2018激活码.txt",
+		"/C/Users/Administrator/Desktop/yygl_qunzuxx_groupid.json",
+		"/C/Users/Administrator/Desktop/临时文件/文件目录/apollo/患者报道黑名单医生.txt",
+		"/E/文档库/个人文档/数据库修改/正式库/2018/05/23/INSERT INTO `weimaiows`.`ptgy_weixingzhewmxx` (`LI.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/Sql_Script-master-d7d61ae6dabc023d91ae12579bef5355674c4355/4.10.0.0/00060-[4.10.0]历史一级科室映射处理.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/Sql_Script-master-d7d61ae6dabc023d91ae12579bef5355674c4355/4.10.0.0/00050-[4.10.0]标准科室.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/Sql_Script-master-d7d61ae6dabc023d91ae12579bef5355674c4355/4.10.0.0/00040-[4.10.0]新增平台号源释放调度.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/Sql_Script-master-d7d61ae6dabc023d91ae12579bef5355674c4355/4.10.0.0/00030-[4.10.0]新增xtgy_yewucsmb参数20113.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/Sql_Script-master-d7d61ae6dabc023d91ae12579bef5355674c4355/4.10.0.0/00020-[4.10.0]医生职字典数据增加.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/Sql_Script-master-d7d61ae6dabc023d91ae12579bef5355674c4355/4.10.0.0/00010-[4.10.0]报告单查询说明、明细重复下行.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/Sql_Script-master-d7d61ae6dabc023d91ae12579bef5355674c4355/4.10.0.0/4.10.0.0-新闻资讯图片表 .sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/Sql_Script-master-d7d61ae6dabc023d91ae12579bef5355674c4355/4.10.0.0/4.10.0.0-新闻资讯统计相关表-日志库.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/Sql_Script-master-d7d61ae6dabc023d91ae12579bef5355674c4355/4.10.0.0/4.10.0.0-新闻资讯统计相关表.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/Sql_Script-master-d7d61ae6dabc023d91ae12579bef5355674c4355/4.10.0.0/4.10.0.0-新闻资讯爬取表-新增.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/Sql_Script-master-d7d61ae6dabc023d91ae12579bef5355674c4355/Tiger_balm(1.1.4)/00003-[Tiger_balm]营销中心-消息提醒规则配置表数据初始化 .sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/Sql_Script-master-d7d61ae6dabc023d91ae12579bef5355674c4355/Tiger_balm(1.1.4)/00021-[Tiger_balm]oc_order_main新增字段.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/Sql_Script-master-d7d61ae6dabc023d91ae12579bef5355674c4355/Tiger_balm(1.1.4)/00020-[Tiger_balm]新增订单中心所属表.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/yygl_qunzuxx_groupid.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/JOB_EXECUTION_LOG.sql",
+		"/C/Users/Administrator/Desktop/临时文件/123.sql",
+		"/C/Users/Administrator/Desktop/临时文件/文件目录/slowlog_20180521_103624.txt",
+		"/E/文档库/mysql/线上数据库/日常操作/临时文件/1.sql",
+		"/C/Users/Administrator/Desktop/临时文件/文件目录/Sql_Script-master-9695f33fed7d9a2c9281d6e28cbdfbe255bb3a09/4.9.2.0/00010-[4.9.2.0]插入代码字典数据.sql",
+		"/C/Users/Administrator/Desktop/临时文件/文件目录/D2CC0D64-3C61-4cee-863C-A59BBE70D100.txt",
+		"/C/Users/Administrator/Desktop/临时文件/文件目录/本地vpn/新建文本文档.txt",
+		"/C/Users/Administrator/Desktop/修改热点数据.sql",
+		"/C/Users/Administrator/Desktop/startup.sh",
+		"/C/Users/Administrator/Desktop/临时文件/test/startup.sh",
+		"/C/Users/Administrator/Desktop/临时文件/文件目录/haproxy.conf",
+		"/C/Users/Administrator/Desktop/临时文件/文件目录/测试数据库/openvpn/server.conf",
+		"/C/Users/Administrator/Desktop/service mycat_status.sql",
+		"/C/Users/Administrator/Desktop/临时文件/vpn/README.txt",
+		"/C/Users/Administrator/Desktop/临时文件/文件目录/测试数据库/README.txt",
+		"/C/Users/Administrator/Desktop/临时文件/文件目录/本地vpn/client.ovpn",
+		"/C/Users/Administrator/AppData/Local/Temp/HZ$D.290.3729/HZ$D.290.3730/连接账户/Password.txt",
+		"/C/Users/Administrator/Desktop/B39B2E9C-4739-4166-B9DB-185080A6FF49.txt",
+		"/C/Users/Administrator/Desktop/临时文件/文件目录/微脉公司VPN/README.txt",
+		"/C/Users/Administrator/Desktop/临时文件/备份/INSERT INTO `weimaiows`.`xtgy_keshixx` (`LIUSHUIHA.sql",
+		"/C/Users/Administrator/Desktop/临时文件/备份/INSERT INTO `weimaiows`.`xtgy_zhigongxx` (`LIUSHUI.sql",
+		"/C/Users/Administrator/Desktop/临时文件/备份/INSERT INTO `weimaiows`.`mzgy_menzhenpb` (`LIUSHUI.sql",
+		"/C/Users/Administrator/Desktop/临时文件/脚本/JOB_STATUS_TRACE_LOG.sql",
+		"/C/Users/Administrator/Documents/WeChat Files/a13732289174/Files/redis.conf",
+		"/C/Users/Administrator/Desktop/apollo-configservice.log",
+		"/C/Users/Administrator/Desktop/tomcat_install.sh",
+		"/C/Users/Administrator/Desktop/62D65720-EEB7-4d30-9472-CAA319E8960A.txt",
+		"/C/Users/Administrator/AppData/Roaming/Foxmail7/Temp-16352-20180516154505/Attach/图文咨询未支付过.txt",
+		"/C/Users/Administrator/Desktop/usr/local/tomcat-2/logs/catalina.2018-05-17.out",
+		"/C/Users/Administrator/Desktop/临时文件/catalina.out",
+		"/C/Users/Administrator/Desktop/临时文件/123/META-INF/maven/commons-dbcp/commons-dbcp/pom.xml",
+		"/C/Users/Administrator/Desktop/临时文件/123/META-INF/maven/commons-dbcp/commons-dbcp/pom.properties",
+		"/C/Users/Administrator/Desktop/临时文件/ls/lshk/WEB-INF/properties/jdbc.properties",
+		"/C/Users/Administrator/Desktop/临时文件/ls/lshk/WEB-INF/properties/config.json",
+		"/E/BaiduNetdiskDownload/tomcat_install.sh",
+		"/C/Users/Administrator/Desktop/Untitled1.txt",
+		"/C/Users/Administrator/Desktop/上线时候执行2.8.0版本.sql",
+		"/C/Users/Administrator/Desktop/服务器连接资料.txt",
+		"/C/Users/Administrator/Desktop/apollo备份数据.sql",
+		"/C/Users/Administrator/Desktop/slowlog_20180514_092338.txt",
+		"/C/Users/Administrator/Desktop/mysql_install.sh",
+		"/C/Users/Administrator/AppData/Roaming/Foxmail7/Temp-14132-20180515180604/Attach/qsjr-v3.2.0-update-formal.sql",
+		"/C/Users/Administrator/Desktop/0B78E9C8-2A79-4428-90E0-3297744A44EA.txt",
+		"/C/Users/Administrator/Desktop/195B2F18-BC08-4a13-9C75-E050789E09BA.txt"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "vue_smzq.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"#1.一共邀请用户（包含无效用户）："
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

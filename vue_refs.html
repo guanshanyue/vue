@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环列表</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div @click="HandleClick01">Hello,world</div>
+        <div ref='hello' @click="HandleClick02">Hello,world123</div>
+        <item ref="one" @change="HandleChange"></item>
+        <item ref="two" @change="HandleChange"></item>
+        <div>{{total}}</div>
+
+        <item @click.native="HandleClick01"></item>
+    </div>
+<script>
+    Vue.component('item',{
+        template: "<div @click='HandleItem'>{{number}}</div>",
+        data: function () {
+            return {
+                number: 0
+            }
+        },
+        methods: {
+            HandleItem: function () {
+                this.number++;
+                this.$emit('change');
+            }
+        }
+    })
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            activated: '',
+            total: 0
+        },
+        methods:{
+            HandleClick01: function () {
+                alert('hello,happy')
+            },
+            HandleClick02: function () {
+                alert(this.$refs.hello.innerHTML)
+            },
+            HandleChange : function () {
+                //console.log(this.$refs.one.number);
+                //console.log(this.$refs.two.number);
+                this.total=this.$refs.one.number+this.$refs.two.number;
+            }
+        }
+    })
+</script>
+</body>
+</html>

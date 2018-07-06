@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画过度效果</title>
+    <script src="./vue.js"></script>
+    <link href="./animate.css" rel="stylesheet" type="text/css">
+    <style>
+        .fade-enter,
+        .fade-leave-to {
+            opacity: 0;
+        }
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity .5s;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <transition
+                name="fade"
+                appear
+                appear-class="custom-appear-class"
+                appear-active-class="animated shake"
+                enter-active-class="animated swing fade-enter-active"
+                leave-active-class="animated shake fade-leave-active">
+            <div v-if="show"
+            >Hello,world
+            </div>
+        </transition>
+        <button @click="show = !show">提交</button>
+    </div>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            show: true
+        }
+    })
+</script>
+</body>
+</html>

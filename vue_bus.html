@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布订阅</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <child content="hello,world"></child>
+        <child content="fines"></child>
+        <child content="fines1234"></child>
+    </div>
+    <div id="app1">
+        <child content="hello,world"></child>
+    </div>
+<script>
+    Vue.prototype.bus = new Vue()
+    Vue.component('child',{
+        props: {
+            content: {
+                type: String,
+                validator: function (value) {
+                    return (value.length>=5)
+                }
+            }
+        },
+        data:function () {
+            return {
+                Selcontent: this.content
+            }
+        },
+        template: "<div @click='HandleClick'>{{this.Selcontent}}</div>",
+        methods:{
+            HandleClick: function () {
+                //alert(this.Selcontent)
+                this.bus.$emit('change',this.Selcontent)
+            }
+        },
+        created: function () {
+            var this_=this;
+            this.bus.$on('change',function(msg){
+                //alert(this_.Selcontent);
+                this_.Selcontent=msg;
+            });
+            console.log('created');
+        },
+        beforeDestroy: function () {
+            console.log('beforeDestroy')
+            this.$bus.$off('change', func);
+        }
+    })
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            activated: ''
+        }
+    })
+    var vm1 = new Vue({
+        el: "#app1",
+        data: {
+            activated: ''
+        }
+    })
+</script>
+</body>
+</html>
