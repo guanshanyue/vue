@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>做组件动画效果</title>
     <script src="./vue.js"></script>
+    <script src="./lodash.js"></script>
     <style>
         .fade-enter, .fade-leave-to {
             opacity: 0;
@@ -17,28 +18,95 @@
         .component-fade-enter, .component-fade-leave-to {
             opacity: 0;
         }
+        .list-item {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .list-enter-active, .list-leave-active {
+            transition: all 1s;
+        }
+        .list-enter, .list-leave-to
+            /* .list-leave-active for below version 2.1.8 */ {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .flip-list-move, .list-move {
+            transition: transform 1s;
+        }
     </style>
 
 </head>
 <body>
     <div id="app">
-        <transition>
-            <component
-                    name="fade" mode="out-in"
-                    :is="view"></component>
+        <transition name="fade" mode="out-in">
+            <component :is="view"></component>
         </transition>
         <input v-model="view" type="radio" value="v-a" id="a" name="view"><label for="a">A</label>
         <input v-model="view" type="radio" value="v-b" id="b" name="view"><label for="b">B</label>
     </div>
-    <!--<div id="transition-components-demo" class="demo">
+    <div id="transition-components-demo" class="demo">
         <input v-model="view" type="radio" value="v-a" id="a" name="view"><label for="a">A</label>
         <input v-model="view" type="radio" value="v-b" id="b" name="view"><label for="b">B</label>
         <transition name="component-fade" mode="out-in">
             <component v-bind:is="view"></component>
         </transition>
-    </div>-->
+    </div>
+    <div id="list-demo" class="demo">
+        <button v-on:click="add">Add</button>
+        <button v-on:click="remove">Remove</button>
+        <transition-group name="list" tag="p">
+    <span v-for="item in items" v-bind:key="item" class="list-item">
+      {{ item }}
+    </span>
+        </transition-group>
+    </div>
+    <div id="flid-list-demo" class="demo">
+        <button v-on:click="HandleShuffle">Shuffle</button>
+        <transition-group name="flip-list" tag="ul">
+            <li v-for="item in items" v-bind:key="item">
+                {{ item }}
+            </li>
+        </transition-group>
+    </div>
 <script>
-  /* new Vue({
+    new Vue({
+        el:'#flid-list-demo',
+        data:{
+            items: [1,2,3,4,5]
+        },
+        methods: {
+            HandleShuffle: function () {
+                this.items=_.shuffle(this.items)
+            }
+        }
+    })
+    new Vue({
+        el: '#list-demo',
+        data: {
+            items: [1,2,3,4,5,6,7,8,9],
+            nextNum: 10,
+            numbers:0
+        },
+        methods: {
+            randomIndex: function () {
+                return Math.floor(Math.random() * this.items.length)
+            },
+            add: function () {
+                this.numbers=this.randomIndex()
+                /*console.log(this.numbers)
+                console.log(this.nextNum)*/
+                this.items.splice(this.numbers, 0, this.nextNum++)
+                this.items=_.shuffle(this.items)
+            },
+            remove: function () {
+                this.numbers=this.randomIndex()
+                // console.log(this.numbers)
+                this.items.splice(this.numbers, 1)
+                this.items=_.shuffle(this.items)
+            },
+        }
+    })
+  new Vue({
         el: '#transition-components-demo',
        data: {
            view: "v-a"
@@ -51,7 +119,7 @@
                template: "<div>Hello,world B</div>"
            }
         }
-    })*/
+    })
     var vm = new Vue({
         el: "#app",
         data: {

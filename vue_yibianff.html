@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环列表</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div>
+        push方法：
+        <input type="text" v-model="text" @keyup.enter="methodByPush">
+        <input type="button" value="测试功能" @click="methodByPush">
+        <ul>
+            <li v-for="item of items">
+                <span v-text="item"></span>
+            </li>
+        </ul>
+    </div>
+    <div>
+        pop方法：
+        <input type="button" value="测试功能" @click="methodByPop">
+        <ul>
+            <li v-for="item of items">
+                <span v-text="item"></span>
+            </li>
+        </ul>
+    </div>
+    <div>
+        shift方法：
+        <input type="button" value="测试功能" @click="methodByShift">
+        <ul>
+            <li v-for="item of items">
+                <span v-text="item"></span>
+            </li>
+        </ul>
+    </div>
+    <div>
+        unshift方法：
+        <input type="text" v-model="text" @keyup.enter="methodByUnshift">
+        <input type="button" value="测试功能" @click="methodByUnshift">
+        <ul>
+            <li v-for="item of items">
+                <span v-text="item"></span>
+            </li>
+        </ul>
+    </div>
+    <div>
+        splice方法：
+        <input type="button" value="测试功能" @click="methodBySplice">
+        <ul>
+            <li v-for="item of items">
+                <span v-text="item"></span>
+            </li>
+        </ul>
+    </div>
+    <div>
+        sort方法：
+        <input type="button" value="测试功能" @click="methodBySort">
+        <ul>
+            <li v-for="item of items">
+                <span v-text="item"></span>
+            </li>
+        </ul>
+    </div>
+    <div>
+        reverse方法：
+        <input type="button" value="测试功能" @click="methodByReverse">
+        <ul>
+            <li v-for="item of items">
+                <span v-text="item"></span>
+            </li>
+        </ul>
+    </div>
+    result显示的地方：<br>
+    <span v-text="result"></span>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            items: [],
+            text: '',
+            result: ''
+        },
+        methods: {
+            methodByPush: function () {
+                this.result = this.items.push(this.text)
+                this.text = ''
+            },
+            methodByPop: function () {
+                this.result = ''
+                this.result = this.items.pop()
+            },
+            methodByShift: function () {
+                this.result = ''
+                this.result = this.items.shift()
+            },
+            methodByUnshift: function () {
+                this.result = ''
+                this.result = this.items.unshift(this.text)
+                this.text = ''
+            },
+            methodBySplice: function () {
+                this.result = ''
+                this.result = this.items.splice(2,1,'yovan')
+            },
+            methodBySort: function () {
+                this.result = ''
+                this.result = this.items.sort()
+            },
+            methodByReverse: function () {
+                this.result = ''
+                this.result = this.items.reverse()
+                alert(this.result)
+            }
+        }
+    })
+</script>
+</body>
+</html>
