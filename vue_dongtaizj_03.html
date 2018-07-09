@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>做组件动画效果</title>
+    <script src="./vue.js"></script>
+    <style>
+        .fade-enter, .fade-leave-to {
+            opacity: 0;
+        }
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity .3s ease;
+        }
+        .component-fade-enter-active, .component-fade-leave-active {
+            transition: opacity .3s ease;
+        }
+        .component-fade-enter, .component-fade-leave-to {
+            opacity: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="app">
+        <transition>
+            <component
+                    name="fade" mode="out-in"
+                    :is="view"></component>
+        </transition>
+        <input v-model="view" type="radio" value="v-a" id="a" name="view"><label for="a">A</label>
+        <input v-model="view" type="radio" value="v-b" id="b" name="view"><label for="b">B</label>
+    </div>
+    <!--<div id="transition-components-demo" class="demo">
+        <input v-model="view" type="radio" value="v-a" id="a" name="view"><label for="a">A</label>
+        <input v-model="view" type="radio" value="v-b" id="b" name="view"><label for="b">B</label>
+        <transition name="component-fade" mode="out-in">
+            <component v-bind:is="view"></component>
+        </transition>
+    </div>-->
+<script>
+  /* new Vue({
+        el: '#transition-components-demo',
+       data: {
+           view: "v-a"
+       },
+       components: {
+           "v-a": {
+               template: "<div>Hello,world A</div>"
+           },
+           "v-b": {
+               template: "<div>Hello,world B</div>"
+           }
+        }
+    })*/
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            view: "v-a"
+        },
+        components: {
+            "v-a": {
+                template: "<div>Hello,world A</div>"
+            },
+            "v-b": {
+                template: "<div>Hello,world B</div>"
+            }
+        }
+    })
+</script>
+</body>
+</html>

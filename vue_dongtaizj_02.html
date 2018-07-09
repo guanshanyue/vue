@@ -34,12 +34,13 @@
                 {{ isEditing ? 'Save' : 'Edit' }}
             </button>
         </transition>
+        -->
         <transition name="fade" mode="in-out">
             <button v-bind:key="docState" @click="HandleClick">
                 {{ buttonMessage }}
             </button>
         </transition>
-        -->
+
         <transition name="with-mode-fade" mode="out-in">
             <button v-if="on" key="on" @click="on = false">
                 on
