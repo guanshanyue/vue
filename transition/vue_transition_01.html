@@ -17,6 +17,26 @@
         .fade-list-enter-active, .fade-list-leave-active {
             transition: opacity 1s;
         }
+        .tab-button {
+            padding: 6px 10px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            background: #f0f0f0;
+            margin-bottom: -1px;
+            margin-right: -1px;
+        }
+        .tab-button:hover {
+            background: #e0e0e0;
+        }
+        .tab-button.active {
+            background: #e0e0e0;
+        }
+        .tab {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -34,44 +54,46 @@
         <button @click="HandleClick">提交</button>
     </div>
     <div id="app02">
-        <transition name="fade-list" mode="out-in">
-            <component :is="todos"
-                tag="ul"
-            >
-                <li :v-for="(todo,index) in todos
-                    :key=todo.id
-                    :content=todo.msg
-                >
-                </li>
-            </component>
-        </transition>
-        <button @click="HandleClick">提交</button>
+        <button
+                v-for="tab in tabs"
+                v-bind:key="tab.name"
+                v-bind:class="['tab-button', { active: currentTab.name === tab.name }]"
+                v-on:click="currentTab = tab"
+        >{{ tab.name }}</button>
+        <component
+                v-bind:is="currentTab.component"
+                class="tab"
+        ></component>
     </div>
 <script>
-    Vue.component('item-list',{
-        props: ['key','content'],
-        template:
-        [
-        {"child-one": "<div>child-one</div>"},
-        {"child-two": "<div>child-two</div>"},
-        {"child-three": "<div>child-three</div>"}
-    ]})
+    var tabs = [
+        {
+            name:"Home",
+            component:{template:"<div>Hello,world</div>"}
+        },
+        {
+            name:"POST",
+            component:{template:"<div>Hello,Post</div>"}
+        },
+        {
+            name:"Case",
+            component:{template:"<div>Hello,Case</div>"}
+        }
+    ]
+    var vm02 = new Vue({
+        el: "#app02",
+        data: {
+            tabs: tabs,
+            currentTab: tabs[0]
+        }
+    })
     Vue.component('child-one',{
         template: "<div>child-one</div>"
     })
     Vue.component('child-two',{
         template: "<div>child-two</div>"
     })
-    var vm02 = new Vue({
-        el: "#app02",
-        data: {
-            todos: [
-                {"id":1,"msg":"child-one"},
-                {"id":2,"msg":"child-two"},
-                {"id":3,"msg":"child-three"}
-                ]
-        }
-    })
+
     var vm01 = new Vue({
         el: "#app01",
         data: {

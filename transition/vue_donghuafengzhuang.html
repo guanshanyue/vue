@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画组件封装</title>
+    <script src="../js/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <todo-list :show="show">
+            <p>Hello,world</p>
+        </todo-list>
+        <button @click="show = !show">提交</button>
+    </div>
+<script>
+    var todoList = {
+        props:['show'],
+        template:`
+            <transition name="fade" @before-enter="beforeEnter"
+                @enter="enter"
+                @leave="leave"
+                v-bind:css="false"
+            >
+                <slot v-if="show"></slot>
+            </transition>
+        `,
+        methods: {
+            beforeEnter: function (el) {
+                el.style.opacity = 0
+                el.style.transformOrigin = 'left'
+            },
+            enter: function (el, done) {
+                Velocity(el, { opacity: 1, fontSize: '1.4em' }, { duration: 300 })
+                Velocity(el, { fontSize: '1em' }, { complete: done })
+            },
+            leave: function (el, done) {
+                Velocity(el, { translateX: '15px', rotateZ: '50deg' }, { duration: 600 })
+                Velocity(el, { rotateZ: '100deg' }, { loop: 2 })
+                Velocity(el, {
+                    rotateZ: '45deg',
+                    translateY: '30px',
+                    translateX: '30px',
+                    opacity: 0
+                }, { complete: done })
+            }
+        }
+    }
+    var vm = new Vue({
+        el: "#app",
+        components: {
+            todoList: todoList
+        },
+        data: {
+            show: false
+        }
+    })
+</script>
+</body>
+</html>
